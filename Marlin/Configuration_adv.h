@@ -181,9 +181,9 @@
  * The fan will turn on automatically whenever any stepper is enabled
  * and turn off after a set period after all steppers are turned off.
  */
-//#define USE_CONTROLLER_FAN
+#define USE_CONTROLLER_FAN
 #if ENABLED(USE_CONTROLLER_FAN)
-  //#define CONTROLLER_FAN_PIN FAN1_PIN  // Set a custom pin for the controller fan
+  #define CONTROLLER_FAN_PIN FAN1_PIN  // Set a custom pin for the controller fan
   #define CONTROLLERFAN_SECS 60          // Duration in seconds for the fan to run after all motors are disabled
   #define CONTROLLERFAN_SPEED 255        // 255 == full speed
 #endif
@@ -191,12 +191,12 @@
 // When first starting the main fan, run it at full speed for the
 // given number of milliseconds.  This gets the fan spinning reliably
 // before setting a PWM value. (Does not work with software PWM for fan on Sanguinololu)
-//#define FAN_KICKSTART_TIME 100
+#define FAN_KICKSTART_TIME 100
 
 // This defines the minimal speed for the main fan, run in PWM mode
 // to enable uncomment and set minimal PWM speed for reliable running (1-255)
 // if fan speed is [1 - (FAN_MIN_PWM-1)] it is set to FAN_MIN_PWM
-//#define FAN_MIN_PWM 50
+#define FAN_MIN_PWM 50
 
 // @section extruder
 
@@ -269,7 +269,7 @@
 // A single Z stepper driver is usually used to drive 2 stepper motors.
 // Uncomment this option to use a separate stepper driver for each Z axis motor.
 // The next unused E driver will be assigned to the second Z stepper.
-//#define Z_DUAL_STEPPER_DRIVERS
+#define Z_DUAL_STEPPER_DRIVERS
 
 #if ENABLED(Z_DUAL_STEPPER_DRIVERS)
 
@@ -511,7 +511,7 @@
   #endif
 
   // Show a progress bar on HD44780 LCDs for SD printing
-  //#define LCD_PROGRESS_BAR
+  #define LCD_PROGRESS_BAR
 
   #if ENABLED(LCD_PROGRESS_BAR)
     // Amount of time (ms) to show the bar
@@ -519,7 +519,7 @@
     // Amount of time (ms) to show the status message
     #define PROGRESS_BAR_MSG_TIME 3000
     // Amount of time (ms) to retain the status message (0=forever)
-    #define PROGRESS_MSG_EXPIRE   0
+    #define PROGRESS_MSG_EXPIRE   60
     // Enable this to show messages for MSG_TIME then hide them
     //#define PROGRESS_MSG_ONCE
     // Add a menu item to test the progress bar:
@@ -780,7 +780,7 @@
  * Requires an LCD display.
  * This feature is required for the default FILAMENT_RUNOUT_SCRIPT.
  */
-//#define ADVANCED_PAUSE_FEATURE
+#define ADVANCED_PAUSE_FEATURE
 #if ENABLED(ADVANCED_PAUSE_FEATURE)
   #define PAUSE_PARK_X_POS 3                  // X position of hotend
   #define PAUSE_PARK_Y_POS 3                  // Y position of hotend
@@ -808,7 +808,7 @@
   #define FILAMENT_CHANGE_NUMBER_OF_ALERT_BEEPS 5 // Number of alert beeps before printer goes quiet
   #define PAUSE_PARK_NO_STEPPER_TIMEOUT       // Enable to have stepper motors hold position during filament change
                                               // even if it takes longer than DEFAULT_STEPPER_DEACTIVE_TIME.
-  //#define PARK_HEAD_ON_PAUSE                // Go to filament change position on pause, return to print position on resume
+  #define PARK_HEAD_ON_PAUSE                // Go to filament change position on pause, return to print position on resume
 #endif
 
 // @section tmc
